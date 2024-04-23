@@ -1,1 +1,7 @@
 # 1302210028-UTS-MKPL
+
+NIM: 1302210028
+
+Nama: Rihan Hidayat
+
+Kelas: SE4503
