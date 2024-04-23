@@ -12,10 +12,7 @@ public class Employee {
 	}
 	
 	private String employeeId;
-	private String firstName;
-	private String lastName;
-	private String idNumber;
-	private String address;
+    private PersonalInfo personalInfo;
 
 	private LocalDate joiningDate;
 	private int monthWorkingInYear;
@@ -33,19 +30,16 @@ public class Employee {
 	private List<String> childNames;
 	private List<String> childIdNumbers;
 	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, LocalDate joiningDate, boolean isForeigner, Gender gender) {
-		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.idNumber = idNumber;
-		this.address = address;
-		this.joiningDate = joiningDate;
-		this.isForeigner = isForeigner;
-		this.gender = gender;
-		
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
-	}
+	public Employee(String employeeId, PersonalInfo personalInfo, LocalDate joiningDate, boolean isForeigner, Gender gender) {
+        this.employeeId = employeeId;
+        this.personalInfo = personalInfo;
+        this.joiningDate = joiningDate;
+        this.isForeigner = isForeigner;
+        this.gender = gender;
+
+        childNames = new LinkedList<String>();
+        childIdNumbers = new LinkedList<String>();
+    }
 	
 	/**
 	 * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3: 7.000.000 per bulan)
@@ -81,7 +75,7 @@ public class Employee {
 	
 	public void setSpouse(String spouseName, String spouseIdNumber) {
 		this.spouseName = spouseName;
-		this.spouseIdNumber = idNumber;
+		this.spouseIdNumber = personalInfo.getIdNumber();
 	}
 	
 	public void addChild(String childName, String childIdNumber) {
